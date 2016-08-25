@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+<a routerLink="/game" routerLinkActive="active"></a>
+
+<md-toolbar color="primary">
+    Get Ben to Maestro!
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+
+<div class="path">
+    <div class="ben"></div>
+
+</div>
+
+
+<div>
+    <button type="button" md-raised-button color="primary" (click)="addToScore()">Add</button>
+    <div>{{curscore.score}}</div>
+    <button type="button" md-raised-button color="accent" (click)="gameFinished()">Finish</button>
+</div>
+

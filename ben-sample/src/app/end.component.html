@@ -1,0 +1,19 @@
+<router-outlet></router-outlet>
+<a routerLink="/end" routerLinkActive="active"></a>
+
+<md-toolbar color="primary">
+    Get Ben to Maestro!
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+
+<ul>
+    <li *ngFor="let score of scores | async">
+      {{ score.name }} - {{score.score}}
+    </li>
+</ul>
+
+<div>
+    <button type="button" md-raised-button color="accent" (click)="startAgain()">Start Again</button>
+
+</div>

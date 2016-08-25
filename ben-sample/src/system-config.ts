@@ -9,25 +9,39 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'firebase': 'vendor/firebase/firebase.js',
+  'angularfire2': 'vendor/angularfire2'
 };
 
 /** User packages configuration. */
 const packages: any = {
+    angularfire2: {
+    defaultExtension: 'js',
+    main: 'angularfire2.js'
+  }
 };
 
-// put the names of any of your Material components here
 const materialPkgs:string[] = [
-  'core',
-  'toolbar',
-  'icon',
   'button',
-  'sidenav',
-  'list',
+  'button-toggle',
   'card',
+  'checkbox',
+  'core',
+  'grid-list',
+  'icon',
   'input',
+  'list',
+  'menu',
+  'progress-bar',
+  'progress-circle',
   'radio',
-  'checkbox'
+  'sidenav',
+  'slider',
+  'slide-toggle',
+  'tabs',
+  'toolbar',
+  'tooltip'
 ];
 
 materialPkgs.forEach((pkg) => {

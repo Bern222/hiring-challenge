@@ -1,0 +1,28 @@
+<router-outlet></router-outlet>
+<a routerLink="/start" routerLinkActive="active" ></a>
+
+<md-toolbar color="primary">
+    Get Ben to Maestro!
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+
+<md-card>
+     <h1>HELLO {{curscore.name | uppercase}}</h1>
+
+    <form (ngSubmit)="onNext()" #gameForm="ngForm">
+      <div class="form-group">
+        <label for="name">Please enter your name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="curscore.name" name="name"
+               #name="ngModel" >
+        
+      </div>
+      
+      <button type="button" md-raised-button color="accent" [disabled]="!gameForm.form.valid" (click)="gotoGame()">Next</button>
+      
+    </form> 
+</md-card>
+
+
+
