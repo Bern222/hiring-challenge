@@ -20,7 +20,7 @@ export class EndComponent implements OnInit, OnDestroy {
   }
 
   startAgain(){
-    this.router.navigate(['/start']);
+    this.router.navigate(['/']);
   }
 
   ngOnInit() {
