@@ -1,3 +1,47 @@
+.transition{
+  -webkit-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  -moz-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  -ms-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out ;
+  -o-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  margin-left: 1500px;
+  width: 200px;
+  opacity: 0;
+}
+
+.transition{
+  opacity: 100;
+  margin-left: 0;
+}
+
+.layoutRow{
+    display:flex;
+    flex-direction:row;
+}
+
+.layoutColumn{
+    display:flex;
+    flex-direction:column;
+}
+
+.timerTxt{
+    font-size:60px;
+}
+
+.scoreTxt{
+    margin-left:40px;
+    font-size:40px;
+    color:green;
+}
+
+.flex75{
+    flex:75;
+}
+
+.flex25{
+    flex:25;
+}
+
 .path{
     margin:20px;
     border-bottom: 2px solid #333;

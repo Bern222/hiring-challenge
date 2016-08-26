@@ -13,9 +13,24 @@ import { Score } from './score';
 
 export class GameComponent implements OnInit, OnDestroy {
   curscore: Score = new Score();
+  scoreTxt: string = "Score";
+  showScoreTxt = false;
   private sub: Subscription;
+  private sTimeout: number;
+  private remainTime: number = 20;
+  
+  
+  constructor(private route: ActivatedRoute, private router: Router, private saveScoreService: SaveScoreService) {
+    this.sTimeout = setInterval(() => this.updateTime(), 1000);
+  }
 
-  constructor(private route: ActivatedRoute, private router: Router, private saveScoreService: SaveScoreService) {}
+  updateTime(){
+    this.remainTime--;
+    if(this.remainTime == 0){
+      clearInterval(this.sTimeout);
+      this.gameFinished();
+    }
+  }
 
   ngOnInit() {
       this.sub = this.route
@@ -31,6 +46,7 @@ export class GameComponent implements OnInit, OnDestroy {
     }
 
     addToScore() {
+      this.showScoreTxt = true;
       this.curscore.score++;
     }
 

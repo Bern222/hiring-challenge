@@ -15,6 +15,7 @@ export class ScoreService {
 
     getScores(): Promise<FirebaseListObservable<any[]>> {
       this.scores = this.af.database.list('scores');
+
       return Promise.resolve(this.scores);
       /*
       this.scores.forEach(i=>i.forEach(function(score){

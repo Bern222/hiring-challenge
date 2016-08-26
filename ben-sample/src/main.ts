@@ -33,6 +33,9 @@ import { StartComponent } from './app/start.component';
 import { GameComponent } from './app/game.component';
 import { EndComponent } from './app/end.component';
 import { FormsModule }   from '@angular/forms';
+import {PLATFORM_DIRECTIVES,provide} from '@angular/core';
+import {FlexDirective}  from './app/flex.directive';
+import {LayoutDirective}  from './app/layout.directive';
 
 
 
@@ -75,10 +78,9 @@ export const firebaseConfig = {
     FormsModule
   ],
   declarations: [AppComponent, StartComponent, EndComponent, GameComponent],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, FlexDirective, LayoutDirective],
   entryComponents: [AppComponent],
 })
-
 
 export class GBTMAppModule {
 
@@ -86,6 +88,9 @@ export class GBTMAppModule {
 
   ngDoBootstrap() {
     this._appRef.bootstrap(AppComponent);
+
+   // provide(PLATFORM_DIRECTIVES, { useValue: FlexDirective, multi: true}),
+    //provide(PLATFORM_DIRECTIVES, { useValue: LayoutDirective, multi: true})
   }
 }
 

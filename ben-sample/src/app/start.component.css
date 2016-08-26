@@ -1,0 +1,19 @@
+.layoutRow{
+    display:flex;
+    flex-direction:row;
+}
+
+.layoutColumn{
+    display:flex;
+    flex-direction:column;
+}
+
+.nametag{
+    margin:0px auto;
+    margin-top:20%;
+    width:500px;
+}
+
+.flex33{
+    flex:33;
+}

@@ -6,16 +6,25 @@
     <span class="app-toolbar-filler"></span>
 </md-toolbar>
 
-
 <div class="path">
     <div class="ben"></div>
 
 </div>
 
-
-<div>
-    <button type="button" md-raised-button color="primary" (click)="addToScore()">Add</button>
-    <div>{{curscore.score}}</div>
-    <button type="button" md-raised-button color="accent" (click)="gameFinished()">Finish</button>
+<div class="layoutRow">
+<md-card class="flex75">
+    <div class="layoutRow">
+        <div>
+            <button type="button" md-raised-button color="primary" (click)="addToScore()">Add</button>
+            <div class="scoreTxt">{{curscore.score}}</div>
+        </div>
+        <div class="scoreRed" [ngClass]="{'transition':show}" [hidden]="!showScoreTxt"></div>    
+    </div>
+    
+</md-card>
+<md-card class="flex25">
+    <h3>Remaining Time:</h3>
+    <div class="timerTxt">{{remainTime}}</div>
+</md-card>
 </div>
 
